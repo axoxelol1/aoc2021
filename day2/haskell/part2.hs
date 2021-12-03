@@ -3,12 +3,6 @@ import Data.Char (isAlpha)
 
 main :: IO ()
 main = do
-    entries <- reverse . map (span isAlpha) <$> (lines <$> readFile "../input.txt")
-    let pos = ((0,0),0)
-    print $ uncurry (*) $ fst $ foldr increase pos entries
-
-main' :: IO ()
-main' = do
     entries <- map (span isAlpha) <$> (lines <$> readFile "../input.txt")
     let pos = ((0,0),0)
     print $ uncurry (*) $ fst $ foldl (flip increase) pos entries
