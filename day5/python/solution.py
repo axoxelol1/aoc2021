@@ -1,10 +1,8 @@
 import numpy as np
 
-def get_pairs(start, end, diag):
-    x0 = start[0]
-    x1 = end[0]
-    y0 = start[1]
-    y1 = end[1]
+def get_pairs(start, end, diag): #Don't like it but too tired to rewrite
+    (x0,y0) = start
+    (x1,y1) = end
     if (x0 < x1):
         xs = [x for x in range(x0, x1 + 1, 1)]
     else:
@@ -23,16 +21,9 @@ def get_pairs(start, end, diag):
             result.append((xs[i], ys[i]))
         return result
 
-def print_example(dict):
-    matrix = np.zeros((10, 10))
-    for pair in dict:
-        matrix[pair[1]][pair[0]] = dict[pair]
-    print(matrix)
-
 with open("../input.txt") as file:
     input = file.read().splitlines()
     lines = map(lambda range: range.split(' -> '), input)
-
 
 def main():
     board = {}
