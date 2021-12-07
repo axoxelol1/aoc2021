@@ -2,6 +2,8 @@ module Main where
 import Data.List.Split
 import Data.List
 
+-- Compile with O2 argument or it will be too slow
+
 input :: IO [Int]
 input = sort . map (read :: String -> Int) . splitOn "," <$> readFile "../input.txt"
 
