@@ -1,6 +1,6 @@
 module Main where
-import Data.List.Split
-import Data.List
+import Data.List.Split ( splitOn )
+import Data.List ( sort )
 
 -- Compile with O2 argument or it will be too slow
 
