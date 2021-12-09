@@ -3,7 +3,7 @@ import Data.List.Split (splitOn)
 import Data.List (find, intersect, concatMap)
 import Data.Maybe (fromJust)
 
-segToNum  :: [String] -> String -> Int
+segToNum :: [String] -> String -> Int
 segToNum hints seg
     | len == 2 = 1
     | len == 3 = 7
