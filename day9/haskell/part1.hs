@@ -10,23 +10,16 @@ main = do
 
 ltAll :: Int -> Int -> [[Int]] -> Bool
 ltAll r c m = ltLeft r c m && ltRight r c m && ltUp r c m && ltDown r c m
-
-ltLeft :: Int -> Int -> [[Int]] -> Bool
-ltLeft r c matrix
-    | (c-1) < 0 = True
-    | otherwise = matrix !! r !! c < matrix !! r !! (c-1)
-
-ltRight :: Int -> Int -> [[Int]] -> Bool
-ltRight r c matrix
-    | c+2 > length (matrix !! r) = True
-    | otherwise = matrix !! r !! c < matrix !! r !! (c+1)
-
-ltUp :: Int -> Int -> [[Int]] -> Bool
-ltUp r c matrix
-    | (r-1) < 0 = True
-    | otherwise = matrix !! r !! c < matrix !! (r-1) !! c
-
-ltDown :: Int -> Int -> [[Int]] -> Bool
-ltDown r c matrix
-    | r+2 > length matrix = True
-    | otherwise = matrix !! r !! c < matrix !! (r+1) !! c
+    where
+        ltLeft r c matrix
+            | (c-1) < 0 = True
+            | otherwise = matrix !! r !! c < matrix !! r !! (c-1)
+        ltRight r c matrix
+            | c+2 > length (matrix !! r) = True
+            | otherwise = matrix !! r !! c < matrix !! r !! (c+1)
+        ltUp r c matrix
+            | (r-1) < 0 = True
+            | otherwise = matrix !! r !! c < matrix !! (r-1) !! c
+        ltDown r c matrix
+            | r+2 > length matrix = True
+            | otherwise = matrix !! r !! c < matrix !! (r+1) !! c
